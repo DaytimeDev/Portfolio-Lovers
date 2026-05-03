@@ -2,7 +2,9 @@
   --background-color: #040011;
   --text-color: lab(94.85% -0.97 10.49);
   --primary-purple: #4d00ff;
+  --primary-purple-light: #9162ff3f;
   --primary-pink: #ff0099;
+  --primary-pink-light: #ff62d83f;
   --primary-green: #00fa9a;
   --purple-border: #cab3ff65;
   --purple-light: hsl(258, 46%, 89%);
@@ -23,7 +25,7 @@ body {
   color: var(--text-color);
 }
 
-.marginLess {
+.nomargin {
   margin: 0;
 }
 
@@ -297,5 +299,23 @@ h2 {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+.loaderInside {
+  animation: loaderInsideAnim 1.5s ease infinite;
+}
+@keyframes loaderInsideAnim {
+  0% {
+    transform: translateX(0%);
+    width: 10%;
+  }
+  50% {
+    transform: translateX(100%);
+    width: 50%;
+  }
+  100% {
+    transform: translateX(0%);
+    width: 10%;
   }
 }

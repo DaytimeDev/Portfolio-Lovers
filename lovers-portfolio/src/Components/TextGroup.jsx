@@ -9,12 +9,12 @@ function TextGroup({ textTitle, titleColor, text }) {
         }}
       >
         <h1
-          className="marginLess"
+          className="nomargin"
           style={{ color: titleColor, fontSize: "1.3rem" }}
         >
           {textTitle}
         </h1>
-        <p className="marginLess">{text}</p>
+        <p className="nomargin">{text}</p>
       </div>
     </>
   );

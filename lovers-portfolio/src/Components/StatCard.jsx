@@ -1,4 +1,5 @@
 import "../App.css";
+import SideBySideLoader from "./SideBySideLoader";
 
 function StatCard({ stat, description, children }) {
   return (
@@ -35,16 +36,43 @@ function StatCard({ stat, description, children }) {
         <h1
           style={{
             fontSize: "4rem",
-            color:
-              stat === "-----" ? "var(--primary-purple)" : "var(--text-color)",
+            color: "var(--text-color)",
             fontVariationSettings: "'wght' 900, 'slnt' 0, 'GRAD' 0, 'ROND' 100",
           }}
-          className="marginLess fadeColor"
+          className="nomargin fadeColor"
         >
-          {stat}
+          {stat === "-----" ? (
+            <div
+              style={{
+                display: "inline-block",
+                position: "relative",
+                textAlign: "center",
+                width: "fit-content",
+              }}
+            >
+              <span style={{ display: "inline-block", zIndex: 0 }}>⠀</span>
+              <span
+                style={{
+                  position: "absolute",
+                  left: "120%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 1,
+                  pointerEvents: "none",
+                }}
+              >
+                <SideBySideLoader
+                  backgroundColor={"var(--primary-purple)"}
+                  foregroundColor={"var(--text-color)"}
+                />
+              </span>
+            </div>
+          ) : (
+            stat
+          )}
         </h1>
         <p
-          className="marginLess"
+          className="nomargin"
           style={{
             fontSize: "1.2rem",
             color: "var(--purple-light)",
