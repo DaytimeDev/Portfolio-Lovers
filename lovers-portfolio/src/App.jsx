@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Landing from "./Pages/Landing";
 import NotFound from "./Pages/NotFound";
 import WorkWithMe from "./Pages/WorkWithMe";
+import Builds from "./Pages/Builds";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -30,6 +31,8 @@ function App() {
         switch (currentPage) {
           case "home":
             return <Landing />;
+          case "builds":
+            return <Builds />;
           case "work-with-me":
             return <WorkWithMe />;
           default:

@@ -22,7 +22,7 @@ function formatVisitCount(visits) {
 }
 
 function formatCompact(value) {
-  const rounded = Math.round(value * 1000) / 1000;
+  const rounded = Math.round(value * 10000) / 10000;
 
   return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
 }
