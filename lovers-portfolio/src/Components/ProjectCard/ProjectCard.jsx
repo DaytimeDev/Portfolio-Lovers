@@ -116,7 +116,6 @@ function ProjectCard({
           <LockSymbol
             insideColor={"var(--primary-pink)"}
             outsideColor={"var(--text-color)"}
-            scaleInDelayed={true}
             style={{
               width: "3rem",
               position: "absolute",

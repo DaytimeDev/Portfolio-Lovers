@@ -1,13 +1,12 @@
 import "../App.css";
 
-function LockSymbol({ insideColor, outsideColor, style, scaleInDelayed }) {
+function LockSymbol({ insideColor, outsideColor, style }) {
   return (
     <svg
       viewBox="0 0 43 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={style}
-      className={scaleInDelayed ? "scaleInDelayed" : "scaleIn"}
     >
       <mask
         id="path-1-outside-1_119_972"
