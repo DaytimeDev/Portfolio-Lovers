@@ -180,40 +180,46 @@ function Landing() {
         />
       </div>
       <div
+        className="PCOnly"
         style={{
           position: "fixed",
           left: "50%",
           bottom: "20px",
-          fontSize: "0.5rem",
           transform: "translateX(-50%)",
           margin: 0,
           zIndex: 50,
+          width: "min(92vw, 720px)",
+          textAlign: "center",
         }}
       >
-        <h1 style={{ color: "var(--primary-pink)" }}>#CodeWithLove</h1>
+        <h2 style={{ color: "var(--primary-pink)" }}>#CodeWithLove</h2>
         <h1
           style={{
             color: "var(--text-color)",
-            display: "inline-flex",
-            alignItems: "center",
+            display: "block",
+            margin: 0,
+            fontSize: "0.8rem",
+            lineHeight: 1.15,
           }}
         >
-          This website was&nbsp;
-          <span style={{ color: "var(--primary-green)" }}>
-            designed & scripted by me
-          </span>
-          &nbsp;just using&nbsp;
-          <span style={{ color: "var(--primary-purple)" }}>react.js</span>
-          &nbsp;& my knowledge.
-          <span
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              marginLeft: "5px",
-            }}
-            class="material-symbols-rounded"
-          >
-            auto_stories
+          <span style={{ display: "inline-block", maxWidth: "100%" }}>
+            This website was&nbsp;
+            <span style={{ color: "var(--primary-green)" }}>
+              designed & scripted by me
+            </span>
+            &nbsp;just using&nbsp;
+            <span style={{ color: "var(--primary-purple)" }}>react.js</span>
+            &nbsp;& my knowledge.
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                marginLeft: "5px",
+              }}
+              className="material-symbols-rounded"
+            >
+              auto_stories
+            </span>
           </span>
         </h1>
       </div>

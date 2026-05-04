@@ -30,14 +30,16 @@ function CardButton({ text, isLocked, link, isPrimary }) {
       {...(!isLocked && {
         onClick: handleClick,
       })}
-      className={isLocked ? "" : "cardButton"}
+      className={
+        isLocked ? "" : "cardButton" + (isPrimary ? " primaryButton" : "")
+      }
       style={{
         width: "100%",
         flex: 1,
         padding: isLocked ? "1px" : "8px 16px",
         fontSize: isPrimary ? "1.3rem" : "16px",
         fontVariationSettings: isPrimary
-          ? "'wght' 1000, 'wdth' 151, 'slnt' 0, 'GRAD' 0, 'ROND' 40"
+          ? "'wght' 1000, 'wdth' 120, 'slnt' 0, 'GRAD' 0, 'ROND' 40"
           : "'wght' 600, 'wdth' 100, 'slnt' 0, 'GRAD' 0, 'ROND' 100",
         borderRadius: "20px",
         border: "2px solid var(--purple-border)",

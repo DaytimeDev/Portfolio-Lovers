@@ -110,29 +110,23 @@ h2 {
     padding: 10px;
   }
 
+  .PCOnly {
+    display: none;
+  }
+
   .centreSection {
     gap: 30px;
   }
 
+  .hundredPercentOnMobile {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   .navbar {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    padding: 0.4rem;
-    scale: 1;
-  }
-
-  .navButton {
-    padding: 0.25rem 0.8rem;
-    font-size: 0.4rem;
-    min-height: 36px;
-  }
-
-  .navButton span {
-    font-size: 14px;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #startingTextContainer {
@@ -145,8 +139,12 @@ h2 {
   }
 
   .statRow {
-    flex-direction: column;
     align-items: center;
+    /* New line only if needed */
+    display: flex;
+    flex-direction: row;
+    /* wrapping */
+    flex-wrap: wrap;
     width: 100%;
   }
 }
@@ -479,4 +477,13 @@ h2 {
 .ghostButton:active {
   color: var(--text-color) !important;
   transform: translateY(0) translateX(0);
+}
+
+.primaryButton:hover {
+  font-variation-settings:
+    "wght" 1000,
+    "wdth" 151,
+    "slnt" 0,
+    "GRAD" 0,
+    "ROND" 100 !important;
 }

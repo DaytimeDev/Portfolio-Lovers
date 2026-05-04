@@ -7,6 +7,7 @@ function Navbar({ currentPath, onNavigate }) {
       style={{
         display: "flex",
         position: "sticky",
+        top: "20px",
         marginLeft: "auto",
         marginRight: "auto",
         marginBottom: "25px",
@@ -17,6 +18,7 @@ function Navbar({ currentPath, onNavigate }) {
         gap: ".4rem",
         padding: ".2rem",
         zIndex: 100,
+        backdropFilter: "blur(10px)",
       }}
       className="navbar"
     >

@@ -40,7 +40,7 @@ function ProjectDetail() {
                 ← Back
               </button>
               <div
-                className="imageContainer"
+                className="imageContainer hundredPercentOnMobile"
                 style={{
                   width: "30vw",
                   aspectRatio: "16/9",
@@ -121,6 +121,7 @@ function ProjectDetail() {
                 </h1>
               </div>
               <div
+                className="hundredPercentOnMobile"
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -133,6 +134,7 @@ function ProjectDetail() {
                 {project ? (
                   <>
                     <div
+                      className="hundredPercentOnMobile"
                       style={{
                         display: "flex",
                         flexDirection: "column",
@@ -147,7 +149,7 @@ function ProjectDetail() {
                             maxWidth: "30vw",
                             textAlign: "start",
                           }}
-                          className="nomargin"
+                          className="nomargin hundredPercentOnMobile"
                         >
                           {detail}
                         </p>

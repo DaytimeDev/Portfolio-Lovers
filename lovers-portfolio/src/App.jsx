@@ -59,19 +59,21 @@ function App() {
             return <NotFound />;
         }
       })()}
-      <ILOVECATS />
-      <HeartSymbol
-        style={{
-          position: "fixed",
-          bottom: "0",
-          right: "0",
-          margin: "20px",
-          width: "80px",
-          transform: "rotate(20deg)",
-        }}
-        insideColor={"var(--primary-purple)"}
-        outsideColor={"var(--primary-green)"}
-      />
+      <div className="PCOnly">
+        <ILOVECATS />
+        <HeartSymbol
+          style={{
+            position: "fixed",
+            bottom: "0",
+            right: "0",
+            margin: "20px",
+            width: "80px",
+            transform: "rotate(20deg)",
+          }}
+          insideColor={"var(--primary-purple)"}
+          outsideColor={"var(--primary-green)"}
+        />
+      </div>
     </>
   );
 }

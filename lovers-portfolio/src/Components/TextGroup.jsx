@@ -4,6 +4,7 @@ function TextGroup({ textTitle, titleColor, text }) {
   return (
     <>
       <div
+        className="hundredPercentOnMobile"
         style={{
           width: "40%",
         }}
