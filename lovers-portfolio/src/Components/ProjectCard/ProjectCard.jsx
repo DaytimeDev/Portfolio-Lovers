@@ -5,7 +5,7 @@ import CardButton from "./CardButton";
 function ProjectCard({
   title,
   description,
-  link,
+  infoLink,
   gameLink,
   imageOverlayText,
   isLocked,
@@ -14,7 +14,7 @@ function ProjectCard({
   return (
     <>
       <div
-        className=""
+        className="scaleIn"
         style={{
           backgroundColor: "var(--primary-purple)",
           borderRadius: "25px",
@@ -51,13 +51,16 @@ function ProjectCard({
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  filter: isLocked ? "grayscale(100%)" : "none",
+                  filter: isLocked ? "grayscale(60%) blur(10px)" : "none",
                 }}
+                className="noselect"
+                draggable={false}
                 src={imageLink}
                 alt=""
               />
             )}
             <h1
+              className="noselect"
               style={{
                 position: "absolute",
                 top: "50%",
@@ -101,13 +104,19 @@ function ProjectCard({
             alignItems: "stretch",
           }}
         >
-          <CardButton text={"Play"} isPrimary={true} isLocked={isLocked} />
-          <CardButton text={"More →"} />
+          <CardButton
+            text={"Play"}
+            isPrimary={true}
+            isLocked={isLocked}
+            link={gameLink}
+          />
+          <CardButton text={"More →"} link={infoLink} />
         </div>
         {isLocked && (
           <LockSymbol
             insideColor={"var(--primary-pink)"}
             outsideColor={"var(--text-color)"}
+            scaleInDelayed={true}
             style={{
               width: "3rem",
               position: "absolute",

@@ -3,7 +3,7 @@ import "../App.css";
 function Tool({ name, iconSrc }) {
   return (
     <div
-      className="tool"
+      className="tool scaleIn"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -16,7 +16,7 @@ function Tool({ name, iconSrc }) {
         padding: "20px",
         borderRadius: "20px",
         backgroundColor: "var(--primary-purple)",
-        border: "4px solid var(--purple-border)",
+        border: "2px solid var(--purple-border)",
       }}
     >
       <img

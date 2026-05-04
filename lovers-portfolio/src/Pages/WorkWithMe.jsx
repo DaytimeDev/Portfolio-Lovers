@@ -74,6 +74,7 @@ function WorkWithMe() {
             />
             <div
               id="tools"
+              className="scaleIn"
               style={{
                 display: "flex",
                 flexWrap: "wrap",

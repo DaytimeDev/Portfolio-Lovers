@@ -12,7 +12,7 @@ function LinkButton({ children, onClick, variant }) {
         fontSize: "20px",
         fontVariationSettings:
           "'wght' 800, 'wdth' 100, 'slnt' 0, 'GRAD' 0, 'ROND' 40",
-        border: "2px solid",
+        border: "2px solid var(--purple-border)",
         borderRadius: "15px",
         display: "flex",
         alignItems: "center",

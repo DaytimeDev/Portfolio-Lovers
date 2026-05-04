@@ -4,16 +4,38 @@ import LockSymbol from "../LockSymbol";
 function CardButton({ text, isLocked, link, isPrimary }) {
   let buttonColor = isPrimary ? "var(--primary-pink)" : "var(--text-color)";
   let textColor = isPrimary ? "var(--text-color)" : "var(--primary-purple)";
+
+  const handleClick = () => {
+    if (!link) {
+      return;
+    }
+
+    const targetUrl = new URL(link, window.location.href);
+
+    if (targetUrl.origin === window.location.origin) {
+      window.history.pushState(
+        {},
+        "",
+        targetUrl.pathname + targetUrl.search + targetUrl.hash,
+      );
+      window.dispatchEvent(new PopStateEvent("popstate"));
+      return;
+    }
+
+    window.open(targetUrl.href, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <button
       {...(!isLocked && {
-        onClick: () => alert("This feature is not available yet!"),
+        onClick: handleClick,
       })}
+      className={isLocked ? "" : "cardButton"}
       style={{
         width: "100%",
         flex: 1,
         padding: isLocked ? "1px" : "8px 16px",
-        fontSize: isPrimary ? "1.2rem" : "16px",
+        fontSize: isPrimary ? "1.3rem" : "16px",
         fontVariationSettings: isPrimary
           ? "'wght' 1000, 'wdth' 151, 'slnt' 0, 'GRAD' 0, 'ROND' 40"
           : "'wght' 600, 'wdth' 100, 'slnt' 0, 'GRAD' 0, 'ROND' 100",

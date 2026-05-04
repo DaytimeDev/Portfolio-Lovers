@@ -96,11 +96,13 @@ h2 {
 .borderHover:hover {
   border-radius: 5px;
   transform: translateY(-5px);
+  filter: drop-shadow(0px 5px 0 var(--primary-purple));
 }
 
 .borderHover:active {
   transform: translateY(0);
   scale: 0.9;
+  filter: drop-shadow(0px 0px 0 var(--primary-purple));
 }
 
 @media (max-width: 768px) {
@@ -378,4 +380,103 @@ h2 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.scaleIn {
+  animation: scaleInAnim 0.8s ease;
+  animation-timing-function: linear(
+    0,
+    0.002 0.3%,
+    0.007 0.6%,
+    0.029 1.3%,
+    0.065 2%,
+    0.119 2.8%,
+    0.237 4.2%,
+    0.659 8.7%,
+    0.778 10.2%,
+    0.871 11.6%,
+    0.95 13.1%,
+    1.009 14.6%,
+    1.033 15.4%,
+    1.052 16.2%,
+    1.066 17%,
+    1.078 17.9%,
+    1.085 18.8%,
+    1.088 19.7%,
+    1.088 20.7%,
+    1.085 21.7%,
+    1.074 23.6%,
+    1.032 28.7%,
+    1.014 31.4%,
+    1.006 33%,
+    1 34.6%,
+    0.993 38%,
+    0.992 41.9%,
+    0.999 51.4%,
+    1.001 57.6%,
+    1
+  );
+}
+
+@keyframes scaleInAnim {
+  0% {
+    scale: 0.8;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.cardButton {
+  transition: all 0.1s ease;
+}
+
+.cardButton:hover {
+  transform: translateY(-5px) translateX(-2px);
+  filter: drop-shadow(2px 5px 0 var(--primary-pink));
+}
+
+.cardButton:active {
+  transform: translateY(0) translateX(0);
+  filter: drop-shadow(0px 0px 0 var(--text-color));
+  border-radius: 100px !important;
+}
+
+.detailStat {
+  font-family: "Google Sans Flex";
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "wght" 1000,
+    "wdth" 151,
+    "slnt" -10,
+    "GRAD" 0,
+    "ROND" 100;
+}
+
+.statusCompleted {
+  color: var(--primary-green);
+}
+.statusOngoing {
+  color: var(--primary-purple);
+}
+.statusPlanned {
+  color: yellow;
+}
+.statusPaused {
+  color: orangered;
+}
+.statusCancelled {
+  color: var(--primary-pink);
+}
+
+.ghostButton:hover {
+  color: var(--primary-pink) !important;
+  transform: translateY(-2px) translateX(-2px);
+}
+
+.ghostButton:active {
+  color: var(--text-color) !important;
+  transform: translateY(0) translateX(0);
 }

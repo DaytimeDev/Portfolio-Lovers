@@ -8,34 +8,51 @@ import NotFound from "./Pages/NotFound";
 import WorkWithMe from "./Pages/WorkWithMe";
 import Builds from "./Pages/Builds";
 import Projects from "./Pages/Projects";
+import ProjectDetail from "./Pages/ProjectDetail";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(() => {
-    let page = window.location.pathname.split("/")[1].toLowerCase();
-    return page === "" ? "home" : page;
-  });
+  const [currentPath, setCurrentPath] = useState(() =>
+    window.location.pathname.toLowerCase(),
+  );
+
+  const navigateTo = (path) => {
+    const nextPath = path.toLowerCase();
+
+    if (window.location.pathname.toLowerCase() !== nextPath) {
+      window.history.pushState({}, "", nextPath);
+    }
+
+    setCurrentPath(nextPath);
+  };
 
   useEffect(() => {
     const handlePopState = () => {
-      let page = window.location.pathname.split("/")[1].toLowerCase();
-      setCurrentPage(page === "" ? "home" : page);
+      setCurrentPath(window.location.pathname.toLowerCase());
     };
 
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
+  const normalizedPath = currentPath || "/";
+  const firstSegment = normalizedPath.split("/")[1] || "home";
+  const activePage = firstSegment === "" ? "home" : firstSegment;
+
   return (
     <>
-      <Navbar />
+      <Navbar currentPath={normalizedPath} onNavigate={navigateTo} />
       {(() => {
-        switch (currentPage) {
+        switch (activePage) {
           case "home":
             return <Landing />;
           case "builds":
             return <Builds />;
           case "projects":
-            return <Projects />;
+            return normalizedPath.split("/").filter(Boolean).length > 1 ? (
+              <ProjectDetail />
+            ) : (
+              <Projects />
+            );
           case "work-with-me":
             return <WorkWithMe />;
           default:
@@ -45,7 +62,7 @@ function App() {
       <ILOVECATS />
       <HeartSymbol
         style={{
-          position: "absolute",
+          position: "fixed",
           bottom: "0",
           right: "0",
           margin: "20px",

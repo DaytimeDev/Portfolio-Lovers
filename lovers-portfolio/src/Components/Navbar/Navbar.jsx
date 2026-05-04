@@ -1,7 +1,7 @@
 import "../../App.css";
 import NavButton from "./NavButton";
 
-function Navbar() {
+function Navbar({ currentPath, onNavigate }) {
   return (
     <div
       style={{
@@ -20,13 +20,33 @@ function Navbar() {
       }}
       className="navbar"
     >
-      <NavButton title={"Home"} iconName={"home"} location="/home" />
-      <NavButton title={"Projects"} iconName={"work"} location="/projects" />
-      <NavButton title={"Builds"} iconName={"build"} location="/builds" />
+      <NavButton
+        title={"Home"}
+        iconName={"home"}
+        location="/home"
+        currentPath={currentPath}
+        onNavigate={onNavigate}
+      />
+      <NavButton
+        title={"Projects"}
+        iconName={"work"}
+        location="/projects"
+        currentPath={currentPath}
+        onNavigate={onNavigate}
+      />
+      <NavButton
+        title={"Builds"}
+        iconName={"build"}
+        location="/builds"
+        currentPath={currentPath}
+        onNavigate={onNavigate}
+      />
       <NavButton
         title={"Work With Me"}
         iconName={"partner_exchange"}
         location="/work-with-me"
+        currentPath={currentPath}
+        onNavigate={onNavigate}
       />
     </div>
   );

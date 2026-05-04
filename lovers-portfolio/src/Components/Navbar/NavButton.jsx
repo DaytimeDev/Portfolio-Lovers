@@ -1,20 +1,22 @@
 import "../../App.css";
 
-function NavButton({ title, iconName, location }) {
+function NavButton({ title, iconName, location, currentPath, onNavigate }) {
   const handleClick = () => {
-    window.history.pushState({}, "", location);
-    window.dispatchEvent(new PopStateEvent("popstate"));
+    onNavigate(location);
   };
 
   let highlighted = false;
-  if (window.location.pathname.toLowerCase() === location.toLowerCase()) {
+  if (currentPath === location.toLowerCase()) {
+    highlighted = true;
+  }
+  if (currentPath === "/" && location.toLowerCase() === "/home") {
+    // Highlight "Home" when on the root path
     highlighted = true;
   }
   if (
-    window.location.pathname.toLowerCase() === "/" &&
-    location.toLowerCase() === "/home"
+    location.toLowerCase() === "/projects" &&
+    currentPath.startsWith("/projects")
   ) {
-    // Highlight "Home" when on the root path
     highlighted = true;
   }
 
@@ -43,7 +45,7 @@ function NavButton({ title, iconName, location }) {
         style={{
           margin: 0,
         }}
-        class="material-symbols-rounded"
+        className="material-symbols-rounded"
       >
         {iconName}
       </span>

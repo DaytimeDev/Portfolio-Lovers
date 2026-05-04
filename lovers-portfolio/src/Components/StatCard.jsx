@@ -2,10 +2,11 @@ import "../App.css";
 import SideBySideLoader from "./SideBySideLoader";
 
 function StatCard({ stat, description, children }) {
+  const isLoading = stat === "...";
   return (
     <>
       <div
-        className="statCard squircle noselect"
+        className="statCard squircle noselect scaleIn"
         style={{
           backgroundColor: "var(--primary-purple)",
           borderRadius: "20px",
@@ -36,29 +37,25 @@ function StatCard({ stat, description, children }) {
         <h1
           style={{
             fontSize: "4rem",
-            color: "var(--text-color)",
+            color: isLoading ? "transparent" : "var(--text-color)",
             fontVariationSettings: "'wght' 900, 'slnt' 0, 'GRAD' 0, 'ROND' 100",
           }}
           className="nomargin fadeColor"
         >
-          {stat === "-----" ? (
+          {isLoading && (
             <div
               style={{
                 display: "inline-block",
                 position: "relative",
                 textAlign: "center",
-                width: "fit-content",
               }}
             >
-              <span style={{ display: "inline-block", zIndex: 0 }}>⠀</span>
               <span
                 style={{
                   position: "absolute",
-                  left: "120%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
-                  zIndex: 1,
-                  pointerEvents: "none",
+                  top: "0%",
+                  left: "0%",
+                  transform: "translate(0%, -150%)",
                 }}
               >
                 <SideBySideLoader
@@ -67,9 +64,8 @@ function StatCard({ stat, description, children }) {
                 />
               </span>
             </div>
-          ) : (
-            stat
           )}
+          {stat}
         </h1>
         <p
           className="nomargin"

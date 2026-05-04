@@ -28,7 +28,7 @@ function formatCompact(value) {
 }
 
 function Landing() {
-  const [visitCount, setVisitCount] = useState("-----");
+  const [visitCount, setVisitCount] = useState("...");
 
   useEffect(() => {
     let isActive = true;
@@ -98,7 +98,7 @@ function Landing() {
             .
           </h1>
         </div>
-        <div id="statList">
+        <div id="statList" className="scaleIn">
           <div className="statRow">
             <StatCard
               stat={"5+ Years"}
@@ -132,7 +132,13 @@ function Landing() {
           textTitle={"Fun Fact"}
           titleColor={"var(--primary-green)"}
           text={
-            "I don’t just code Roblox games, I can also make websites, AI’s & apps, all using knowledge I have gained over the years. I even made this website myself 👀"
+            <span>
+              I don’t just code Roblox games, I can also make websites, AI’s &
+              apps, all using knowledge I have gained over the years. I even
+              made this website myself 👀
+              <br />I have experience in design, coding, project management +
+              more
+            </span>
           }
         />
         <TextGroup
@@ -193,7 +199,9 @@ function Landing() {
           }}
         >
           This website was&nbsp;
-          <span style={{ color: "var(--primary-green)" }}>made by me</span>
+          <span style={{ color: "var(--primary-green)" }}>
+            designed & scripted by me
+          </span>
           &nbsp;just using&nbsp;
           <span style={{ color: "var(--primary-purple)" }}>react.js</span>
           &nbsp;& my knowledge.

@@ -7,7 +7,7 @@ function SideBySideLoader({ backgroundColor, foregroundColor }) {
         backgroundColor: backgroundColor || "var(--primary-pink)",
         width: "100%",
         minWidth: "100px",
-        minHeight: "10px",
+        height: "10px",
         borderRadius: "50px",
         padding: "5px",
       }}
