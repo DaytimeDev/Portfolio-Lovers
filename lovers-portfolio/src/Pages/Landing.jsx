@@ -37,6 +37,7 @@ function Landing() {
       try {
         let totalVisits = 0;
         totalVisits += await gatherVisitCount(9808843411); // Mine-It
+        totalVisits += 174116; // Mine-It old public version
 
         if (isActive && typeof totalVisits === "number") {
           setVisitCount(formatVisitCount(totalVisits));
