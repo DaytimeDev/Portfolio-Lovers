@@ -18,6 +18,8 @@ function App() {
   const navigateTo = (path) => {
     const nextPath = path.toLowerCase();
 
+    window.scrollTo({ top: 0, behavior: "instant" });
+
     if (window.location.pathname.toLowerCase() !== nextPath) {
       window.history.pushState({}, "", nextPath);
     }
