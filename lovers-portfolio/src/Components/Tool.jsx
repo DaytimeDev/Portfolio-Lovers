@@ -9,18 +9,20 @@ function Tool({ name, iconSrc }) {
         flexDirection: "column",
         alignItems: "center",
         /* keep a 1:1 square and center content */
-        width: "50px",
-        height: "50px",
+        width: "25px",
+        height: "25px",
         aspectRatio: "1 / 1",
         justifyContent: "center",
         padding: "20px",
         borderRadius: "20px",
+        backgroundColor: "var(--primary-purple)",
+        border: "4px solid var(--purple-border)",
       }}
     >
       <img
         style={{
-          width: "50px",
-          height: "50px",
+          width: "30px",
+          height: "30px",
           objectFit: "contain",
           borderRadius: "5px",
         }}

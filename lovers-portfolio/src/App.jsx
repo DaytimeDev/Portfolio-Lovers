@@ -7,6 +7,7 @@ import Landing from "./Pages/Landing";
 import NotFound from "./Pages/NotFound";
 import WorkWithMe from "./Pages/WorkWithMe";
 import Builds from "./Pages/Builds";
+import Projects from "./Pages/Projects";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -33,6 +34,8 @@ function App() {
             return <Landing />;
           case "builds":
             return <Builds />;
+          case "projects":
+            return <Projects />;
           case "work-with-me":
             return <WorkWithMe />;
           default:

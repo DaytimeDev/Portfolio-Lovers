@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,wdth,slnt,ROND@6..144,1..1000,25..151,-10..0,0..100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Redacted&display=swap");
+
 :root {
   --background-color: #040011;
   --text-color: lab(94.85% -0.97 10.49);
@@ -10,11 +13,13 @@
   --purple-light: hsl(258, 46%, 89%);
   --accent-blue: #100036;
   --dark-transparent: rgba(52, 44, 97, 0.714);
+  --roblox-red: #e2231a;
+  --roblox-red-light: #ff665f40;
 }
 
 body {
   background-color: var(--background-color);
-  font-family: "Google Sans Flex", sans-serif;
+  font-family: "Google Sans Flex";
   font-optical-sizing: auto;
   font-variation-settings:
     "slnt" 0,
@@ -317,5 +322,60 @@ h2 {
   100% {
     transform: translateX(0%);
     width: 10%;
+  }
+}
+
+.linkButton {
+  background-color: var(--primary-purple);
+  color: var(--text-color);
+  border-color: var(--purple-border);
+  transition: all 0.1s ease;
+  font-family: "Google Sans Flex";
+}
+.linkButton:hover {
+  background-color: var(--primary-purple);
+  color: var(--text-color);
+  transform: translateY(-5px) translateX(-2px);
+  filter: drop-shadow(2px 5px 0 var(--primary-purple));
+}
+.linkButton:active {
+  transform: translateY(0) translateX(0);
+  filter: drop-shadow(0px 0px 0 var(--primary-purple));
+}
+
+.linkButton--roblox {
+  background-color: var(--roblox-red);
+  border-color: #ff9f99;
+}
+
+.linkButton--roblox:hover {
+  background-color: var(--roblox-red);
+  color: #ffd8d6;
+  filter: drop-shadow(2px 5px 0 var(--roblox-red));
+}
+
+.linkButton--roblox:active {
+  filter: drop-shadow(0px 0px 0 var(--roblox-red));
+}
+
+.spinAnimation {
+  animation: spinAnim 5s ease infinite;
+}
+
+@keyframes spinAnim {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

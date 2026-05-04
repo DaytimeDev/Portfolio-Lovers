@@ -1,7 +1,8 @@
 import "../App.css";
 import Tool from "../Components/Tool";
 import HeartSymbol from "../Components/HeartSymbol";
-import SideBySideLoader from "../Components/SideBySideLoader";
+import StarSymbol from "../Components/StarSymbol";
+import LinkButton from "../Components/LinkButton";
 
 function WorkWithMe() {
   return (
@@ -79,8 +80,6 @@ function WorkWithMe() {
                 gap: "10px",
                 justifyContent: "center",
                 maxWidth: "600px",
-                backgroundColor: "var(--primary-purple)",
-                border: "4px solid var(--purple-border)",
                 borderRadius: "30px",
               }}
             >
@@ -139,6 +138,60 @@ function WorkWithMe() {
               />
             </div>
           </div>
+        </div>
+        <div
+          id="getInTouchContainer"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "18px",
+          }}
+        >
+          <h1
+            style={{
+              fontVariationSettings:
+                "'wght' 1000, 'wdth' 151, 'slnt' -10, 'GRAD' 0, 'ROND' 100",
+              color: "var(--primary-pink)",
+              alignSelf: "center",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            Get in touch
+            <StarSymbol
+              insideColor={"var(--primary-pink)"}
+              outsideColor={"white"}
+              innerWidth={4}
+              outerWidth={2}
+              spinAnimation={true}
+            />
+          </h1>
+          <LinkButton
+            onClick={() =>
+              window.open(
+                "https://discord.com/users/562685530790428692",
+                "_blank",
+                "noopener,noreferrer",
+              )
+            }
+          >
+            Discord
+          </LinkButton>
+          <LinkButton
+            variant="roblox"
+            onClick={() =>
+              window.open(
+                "https://www.roblox.com/users/532657047/profile",
+                "_blank",
+                "noopener,noreferrer",
+              )
+            }
+          >
+            Roblox
+          </LinkButton>
         </div>
       </div>
     </>
