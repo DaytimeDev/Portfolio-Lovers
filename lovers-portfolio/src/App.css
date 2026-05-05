@@ -33,6 +33,9 @@ body {
 .nomargin {
   margin: 0;
 }
+.widthfit {
+  width: fit-content;
+}
 
 h1::selection {
   background: var(--primary-purple);
@@ -486,4 +489,27 @@ h2 {
     "slnt" 0,
     "GRAD" 0,
     "ROND" 100 !important;
+}
+
+.leftToRightTrain {
+  animation: leftToRightTrainAnim 20s linear infinite;
+}
+
+@keyframes leftToRightTrainAnim {
+  0% {
+    opacity: 0;
+    left: 10%;
+  }
+  10% {
+    opacity: 1;
+    left: 15%;
+  }
+  90% {
+    left: 85%;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 90%;
+  }
 }
