@@ -134,7 +134,7 @@ function Landing() {
           titleColor={"var(--primary-green)"}
           text={
             <span>
-              I don’t just code Roblox games, I can also make websites, AI’s &
+              I don’t just code Roblox games, I can also make websites, AIs &
               apps, all using knowledge I have gained over the years. I even
               made this website myself 👀
               <br />I have experience in design, coding, project management +
