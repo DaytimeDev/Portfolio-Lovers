@@ -14,8 +14,9 @@ function NavButton({ title, iconName, location, currentPath, onNavigate }) {
     highlighted = true;
   }
   if (
-    location.toLowerCase() === "/projects" &&
-    currentPath.startsWith("/projects")
+    (location.toLowerCase() === "/projects" &&
+      currentPath.startsWith("/projects")) ||
+    (location.toLowerCase() === "/builds" && currentPath.startsWith("/builds"))
   ) {
     highlighted = true;
   }

@@ -9,6 +9,7 @@ import WorkWithMe from "./Pages/WorkWithMe";
 import Builds from "./Pages/Builds";
 import Projects from "./Pages/Projects";
 import ProjectDetail from "./Pages/ProjectDetail";
+import BuildDetail from "./Pages/BuildDetail";
 
 function App() {
   const [currentPath, setCurrentPath] = useState(() =>
@@ -48,7 +49,11 @@ function App() {
           case "home":
             return <Landing />;
           case "builds":
-            return <Builds />;
+            return normalizedPath.split("/").filter(Boolean).length > 1 ? (
+              <BuildDetail />
+            ) : (
+              <Builds />
+            );
           case "projects":
             return normalizedPath.split("/").filter(Boolean).length > 1 ? (
               <ProjectDetail />

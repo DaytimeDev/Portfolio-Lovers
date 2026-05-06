@@ -23,12 +23,12 @@ const projects = [
   },
   {
     slug: "redacted1",
-    title: "Nice try - Redacted Title",
+    title: "Nice try TITLE GRABBER",
     description:
       "Lead scripter for a story game using custom complex camera systems and animation systems.",
     infoLink: "/projects/redacted1",
     imageLink: "/Redacted1.png",
-    imageOverlayText: "Hidden Content",
+    imageOverlayText: "Private Content",
     isLocked: true,
     details: [
       "Lead scripter on a story game.",
@@ -41,12 +41,12 @@ const projects = [
   },
   {
     slug: "redacted2",
-    title: "My Indie Game",
+    title: "Stop trying to steal titles.",
     description:
       "This is a game I am producing myself, not much detail I can give about the game though.",
     infoLink: "/projects/redacted2",
     imageLink: "/IndieGame.png",
-    imageOverlayText: "Hidden Content",
+    imageOverlayText: "Private Content",
     isLocked: true,
     details: [
       "Currently in production.",

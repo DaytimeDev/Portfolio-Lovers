@@ -21,8 +21,6 @@ function Projects() {
               color: "var(--primary-purple)",
               fontVariationSettings:
                 "'wght' 1000, 'slnt' 0, 'GRAD' 0, 'ROND' 100",
-              textShadow:
-                "-1px -1px 0 var(--text-color), 1px -1px 0 var(--text-color), -1px 1px 0 var(--text-color), 1px 1px 0 var(--text-color)",
             }}
           >
             Projects
